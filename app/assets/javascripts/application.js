@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require bootstrap-sprockets
+//= require google_analytics
+//= require mediaelement-and-player.min
+//= require mep-feature-playlist
 //= require_tree .

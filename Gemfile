@@ -5,7 +5,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'turbolinks'
+gem 'haml-rails'
+# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
@@ -16,13 +17,18 @@ group :development do
   gem 'spring'
 end
 gem 'thin'
+gem 'public_activity'
 gem 'slim-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'high_voltage'
-gem 'devise'
+gem 'devise','~>4.1.1'
 gem 'pundit'
+gem 'tumblr_client'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem "erb2haml", :group => :development
 group :development do
   gem 'guard-bundler'
   gem 'guard-minitest'
@@ -45,5 +51,6 @@ group :test do
   gem 'faker'
 end
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
 end

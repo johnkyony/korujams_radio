@@ -1,7 +1,14 @@
 - if user_signed_in?
-  li = link_to 'Edit account', edit_user_registration_path
-  li = link_to 'Sign out', destroy_user_session_path, :method=>'delete'
+  li= link_to 'Discovery', "#"
+  li= link_to 'Recommendation', "#"
+  li= link_to 'Favourites',"#" 
+  li=  link_to "New Playlist" ,new_playlist_path,  remote: true,"data-target" => "#product-modal", "data-toggle" => "modal"
+  li= link_to "Playlists" , playlists_path
+  
+  
 - else
+  li= link_to 'Trending', "#"
+  li= link_to 'Explore', "#"
   li = link_to 'Sign in', new_user_session_path
   li = link_to 'Sign up', new_user_registration_path
 - if user_signed_in?

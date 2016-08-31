@@ -1,0 +1,9 @@
+- @playlists.each do |playlist|
+  .media
+    .media-left
+      %a{:href => "#"}
+        %img.media-object{:alt => "...", :src => "#{playlist.playlist_cover}"}/
+    .media-body
+      %h4.media-heading= playlist.name
+      = link_to "View playlist" ,  playlist_playlist_songs_path(playlist),class: "btn btn-primary"
+      = link_to "Add music" ,playlist_path(playlist),class: "btn btn-primary"

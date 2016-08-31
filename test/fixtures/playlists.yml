@@ -1,0 +1,14 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  name: MyString
+  playlist_cover: MyString
+  publish: false
+
+two:
+  user: 
+  name: MyString
+  playlist_cover: MyString
+  publish: false

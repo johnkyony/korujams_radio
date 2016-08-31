@@ -1,0 +1,22 @@
+.container 
+  .row
+    .col-md-12
+      %audio{:autoplay => "autoplay",:controls => "controls"}
+                 
+        - @tracks.each do |post|          
+          %source{:src =>  "#{post.song.source_url}", :title => "#{post.song.title}", :type => "audio/mpeg"}
+      / %p.pull-right= post.song.title
+    
+      
+
+:javascript
+  $(function(){
+    $('audio,video').mediaelementplayer({
+        loop: true,
+        shuffle: true,
+        playlist: true,
+        audioHeight: 30,
+        playlistposition: 'top',
+        features: ['playlistfeature', 'prevtrack', 'playpause', 'nexttrack', 'loop', 'shuffle', 'playlist', 'current', 'progress', 'duration', 'volume'],
+    });
+  });    
