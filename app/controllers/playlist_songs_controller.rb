@@ -1,6 +1,7 @@
 class PlaylistSongsController < ApplicationController
   def index
-    @playlist_songs = PlaylistSong.where(params[:playlist_id])
+    @playlist_songs = PlaylistSong.where(:playlist_id => params[:playlist_id])
+
 
   end
 
