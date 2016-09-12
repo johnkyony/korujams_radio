@@ -1,6 +1,6 @@
 class PlaylistsController < ApplicationController
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.where(:user_id => current_user.id)
   end
 
   def new 
@@ -21,6 +21,30 @@ class PlaylistsController < ApplicationController
     @feed = Song.order('RANDOM()').paginate(page: params[:page], per_page: 21)
     @playlist = Playlist.find(params[:id])
   end
+  def edit
+    @playlist = Playlist.find(params[:id])
+  end
+
+ def update
+  @playlist = Playlist.find(params[:id])
+  if @playlist.user_id == current_user.id
+    @playlist.update(playlist_params)
+  if @playlist.save
+    flash[:notice] = "The playlist was successfully updated"
+    render 'save'
+  else
+    render 'edit'
+    flash[:success] = "Something that went wrong please try again"
+  end
+    
+  else
+     flash[:success] = "Sorry you're not the host of the party"
+     redirect_to party_path(params[:id])
+
+  end
+  
+
+ end
    private
   # Use callbacks to share common setup or constraints between actions.
   def set_playlist

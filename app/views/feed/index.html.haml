@@ -1,20 +1,37 @@
-#infinite-scrolling
-  = will_paginate @feed 
-.row
-  - @feed.each do |post|
-    .col-sm-6.col-md-4      
-      .thumbnail
-        %img{:alt => "#{post.title}", :src => "#{post.art_work}"}/
-        .caption
+= render 'layouts/trending_playlist'
+.col-sm-7
+  - @feed.each do |post|   
+    .row
+      .col-sm-3
+        .well
           
-          / %h3= post.title         
-        = link_to song_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true do
-          %i.glyphicon.glyphicon-play
-        / = link_to track_playlist_path, remote: true , method: :put do
-        /   %i.glyphicon.glyphicon-plus
+          %img{:alt => "#{post.title}", :src => "#{post.art_work}"}/
+      .col-sm-9
+        .well
+          %p= post.title 
+          = link_to song_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true do
+            %i.glyphicon.glyphicon-play
+  = will_paginate @feed 
+
+
+
+/ #infinite-scrolling
+/   = will_paginate @feed 
+/ .row
+/   - @feed.each do |post|
+/     .col-sm-6.col-md-4      
+/       .thumbnail
+/         %img{:alt => "#{post.title}", :src => "#{post.art_work}"}/
+/         .caption
+          
+/           / %h3= post.title         
+/         = link_to song_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true do
+/           %i.glyphicon.glyphicon-play
+/         / = link_to track_playlist_path, remote: true , method: :put do
+/         /   %i.glyphicon.glyphicon-plus
            
-        / = link_to "Play" ,track_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true, class: "btn btn-primary"
+/         / = link_to "Play" ,track_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true, class: "btn btn-primary"
        
-    %br          
+/     %br          
 #product-modal.modal.fade
  

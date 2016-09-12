@@ -1,3 +1,17 @@
+/ .col-sm-7
+/   - @playlist_songs.each do |post| 
+/     .row
+/       .col-sm-3
+/         .well
+          
+/           %img{:alt => "#{post.song.title}", :src => "#{post.song.art_work}"}/
+/       .col-sm-9
+/         .well
+/           %p= post.song.title
+/           = link_to playlist_playlist_audio_player_index_path, title: "#{post.song.title}", rel: 'tooltip' , remote: true do
+/             %i.glyphicon.glyphicon-play
+ 
+
 -  @playlist_songs.each do |post|
   .col-sm-6.col-md-4      
     .thumbnail
@@ -13,7 +27,7 @@
       / = link_to "Play" ,track_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true, class: "btn btn-primary"
   
 
-  %br   
+/   %br   
 %br
 %br
 %br       

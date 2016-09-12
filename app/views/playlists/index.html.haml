@@ -1,9 +1,14 @@
-- @playlists.each do |playlist|
-  .media
-    .media-left
-      %a{:href => "#"}
-        %img.media-object{:alt => "...", :src => "#{playlist.playlist_cover}"}/
-    .media-body
-      %h4.media-heading= playlist.name
-      = link_to "View playlist" ,  playlist_playlist_songs_path(playlist),class: "btn btn-primary"
-      = link_to "Add music" ,playlist_path(playlist),class: "btn btn-primary"
+.col-sm-7
+  - @playlists.each do |playlist|  
+    .row
+      .col-sm-3
+        .well
+          
+          %img{:src => "#{playlist.playlist_cover}"}/
+      .col-sm-9
+        .well
+          %p= playlist.name
+          = link_to "View playlist" ,  playlist_playlist_songs_path(playlist),class: "btn btn-primary"
+          = link_to "Add music" ,playlist_path(playlist),class: "btn btn-primary"
+          = link_to "Edit playlist" ,  edit_playlist_path(playlist) , remote: true ,class: "btn btn-primary"
+#edit-modal.modal.fade

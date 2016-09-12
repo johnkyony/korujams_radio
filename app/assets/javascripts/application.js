@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-
+//= require jquery.jplayer.min
+//= require mediaelement-and-player.min
 //= require bootstrap-sprockets
 //= require google_analytics
-//= require mediaelement-and-player.min
-//= require mep-feature-playlist
+
+
 //= require_tree .

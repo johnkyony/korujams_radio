@@ -2,10 +2,10 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: 
-  name: MyString
+  user: john
+  name: Its light
   playlist_cover: MyString
-  publish: false
+  publish: true
 
 two:
   user: 

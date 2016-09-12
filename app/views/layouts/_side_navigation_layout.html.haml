@@ -20,12 +20,17 @@
       %span.hamb-top
       %span.hamb-middle
       %span.hamb-bottom
-    .container
-      .row
-        .col-lg-8.col-lg-offset-2
-          = yield
+    = render 'layouts/new_redesign'
+    #product-modal.modal.fade
+    #edit-modal.modal.fade
+
+ 
+    / .container
+    /   .row
+    /     .col-lg-8.col-lg-offset-2
+    /       = yield
           
-        = render 'layouts/footer_nav_bar'  
+    /     = render 'layouts/footer_nav_bar'  
 
 :javascript
 

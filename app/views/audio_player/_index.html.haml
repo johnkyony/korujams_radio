@@ -1,21 +1,20 @@
-.container 
-  .row
-    .col-md-12
-      %audio{:autoplay => "autoplay",:controls => "controls"}
-                 
-                  
-        %source{:src =>  "#{@track.source_url}", :title => "#{@track.title}", :type => "audio/mpeg"}
-      
-      
 
+.audio-player
+  %h2= @track.title
+  %audio#audio-player{:autoplay => true , :controls => "controls", :src => "#{@track.source_url}", :type => "audio/mp3"}
+    / @end .audio-player
+  / @end #content
+/ @end #w
 :javascript
   $(function(){
-    $('audio,video').mediaelementplayer({
-        loop: true,
-        shuffle: true,
-        playlist: true,
-        audioHeight: 30,
-        playlistposition: 'top',
-        features: ['playlistfeature', 'prevtrack', 'playpause', 'nexttrack', 'loop', 'shuffle', 'playlist', 'current', 'progress', 'duration', 'volume'],
+    $('#audio-player').mediaelementplayer({
+      alwaysShowControls: true,
+      features: ['playpause','progress','volume'],
+      audioVolume: 'horizontal',
+      audioWidth: 1000,
+      audioHeight: 70,
+      iPadUseNativeControls: true,
+      iPhoneUseNativeControls: true,
+      AndroidUseNativeControls: true
     });
-  });    
+  });
