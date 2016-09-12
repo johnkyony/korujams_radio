@@ -27,11 +27,14 @@ class PlaylistSongsController < ApplicationController
 
   def show
   end
-  
-  def destroy
-    @playlist_song.playlist_id = params[:playlist_id]
-    @playlist_song.song_id = params[:song_id]
-    @playlist_song.destroy
+   def delete
+    @playlist_song.song_id = PlaylistSong.find(params[:song_id])
+  end
+  def destroy    
+    
+    @playlist_song = PlaylistSong.find_by(params[:id])
+    @playlist_song.destroy   
+    redirect_to :back
   end
 
   private

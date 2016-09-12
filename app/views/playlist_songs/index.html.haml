@@ -21,8 +21,8 @@
         / %h3= post.title         
       = link_to playlist_playlist_audio_player_index_path, title: "#{post.song.title}", rel: 'tooltip' , remote: true do
         %i.glyphicon.glyphicon-play
-      / = link_to  new_playlist_song_playlist_song_path[@playlist,post.id], remote: false , method: :post  do
-      /   %i.glyphicon.glyphicon-plus
+      = link_to  playlist_song_path(post.id), :confirm => "Are you sure?" , method: :delete  do
+        %i.glyphicon.glyphicon-minus
          
       / = link_to "Play" ,track_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true, class: "btn btn-primary"
   

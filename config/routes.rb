@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resources :users
   resources :playlists
   resources :songs
-  resources :playlist_songs
+  resources :playlist_songs do
+    get "delete"
+  end
   
   resources :playlist do 
     resources :playlist_songs    

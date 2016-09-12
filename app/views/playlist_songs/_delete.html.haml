@@ -1,0 +1,12 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      %h3 Delete Product
+    .modal-body
+      %ul.errors
+      Are you sure you wish to delete
+      = succeed "?" do
+        %b= @playlist_song.song.title
+    .modal-footer
+      = link_to "Yes, Delete This Product",  playlist_playlist_song_path(@playlist_song), method: :delete, remote: true, class: "btn btn-danger"
+      = link_to "No, Please Don't", "#", class: "btn btn-default", data: { dismiss: "modal" }
