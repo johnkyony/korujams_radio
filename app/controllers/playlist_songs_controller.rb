@@ -32,7 +32,7 @@ class PlaylistSongsController < ApplicationController
   end
   def destroy    
     
-    @playlist_song = PlaylistSong.find(:id => params[:id])
+    @playlist_song = PlaylistSong.find_by(:id => params[:id])
     @playlist_song.destroy   
     redirect_to :back
   end
