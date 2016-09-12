@@ -27,6 +27,16 @@ class PlaylistSongsController < ApplicationController
 
   def show
   end
+  def delete
+    @playlist_song = Product.find(params[:product_id])
+  end
+
+  def destroy
+    @products = Product.all
+    @product = Product.find(params[:id])
+    @product.destroy
+  end
+
   private
   def playlist_songs_params
     params.require(:playlistSong).permit(:playlist_id , :song_id)
