@@ -6,7 +6,8 @@ class Song < ActiveRecord::Base
   validates_presence_of :title 
   has_many :playlist_songs
   has_many :playlists, through: :playlist_songs
-   def self.save_data_from_api(blog)
+  scope :starts_with, -> (title) { where("title like ?", "%#{title}%")}
+  def self.save_data_from_api(blog)
     offset = 0
     client = Tumblr::Client.new :consumer_key => 'SC33bEI1MgbSTpMgI9ORph6mezAaTCm1uMYG81iOUNWJ4CMJ9f'
     iresult = client.posts "#{blog}", :type => 'audio', :filter => 'raw'

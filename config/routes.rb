@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'song_search/index'
+
   get 'playlist_audio_player/index'
 
   get 'playlist_songs/index'

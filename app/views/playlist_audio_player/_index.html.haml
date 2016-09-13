@@ -2,7 +2,7 @@
 .container 
   .row
     .col-md-12
-      %audio#audio-player{:autoplay => "autoplay",:controls => "controls"}
+      %audio{:autoplay => "autoplay",:controls => "controls"}
                  
         - @tracks.each do |post|          
           %source{:src =>  "#{post.song.source_url}", :title => "#{post.song.title}", :type => "audio/mpeg"}

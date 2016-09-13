@@ -1,16 +1,4 @@
-/ .col-sm-7
-/   - @playlists.each do |playlist|  
-/     .row
-/       .col-sm-3
-/         .well
-          
-/           %img{:src => "#{playlist.playlist_cover}"}/
-/       .col-sm-9
-/         .well
-/           %p= playlist.name
-/           = link_to "View playlist" ,  playlist_playlist_songs_path(playlist),class: "btn btn-primary"
-/           = link_to "Add music" ,playlist_path(playlist),class: "btn btn-primary"
-/           = link_to "Edit playlist" ,  edit_playlist_path(playlist) , remote: true ,class: "btn btn-primary"
+
 - @playlists.each do |playlist|
   .col-sm-6.col-md-4      
     .thumbnail

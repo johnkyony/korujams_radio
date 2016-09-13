@@ -1,5 +1,13 @@
 #infinite-scrolling
   = will_paginate @feed 
+#search 
+  .container 
+    .row
+      .col-md-5 
+      = form_tag(song_search_index_path, :method => "get", id: "search-form") do
+        = text_field_tag :search, params[:search], placeholder: "Search Track"
+        = submit_tag "Search"
+
 .row
   - @feed.each do |post|
     .col-sm-6.col-md-4      
@@ -7,13 +15,13 @@
         %img{:alt => "#{post.title}", :src => "#{post.art_work}"}/
         .caption
           
-          / %h3= post.title         
+              
         = link_to song_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true do
           %i.glyphicon.glyphicon-play
         = link_to   playlist_song_playlist_songs_path(@playlist,post.id), remote: true , method: :post   do
           %i.glyphicon.glyphicon-plus
            
-        / = link_to "Play" ,track_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true, class: "btn btn-primary"
+        
        
     %br          
 
