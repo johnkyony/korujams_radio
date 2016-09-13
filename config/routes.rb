@@ -34,6 +34,11 @@ Rails.application.routes.draw do
       resources :playlist_songs
     end
   end
+
+  resources :playlist do 
+    resources :song_search 
+  end
+
   
   resources :playlist do 
     resources :playlist_audio_player
