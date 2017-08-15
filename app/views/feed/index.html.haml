@@ -1,37 +1,25 @@
+.container
+  .row
+    .col-s12
+      - @feed.each do |post|   
+        .col-s3
+          .card
+            .card-image.waves-effect.waves-block.waves-light
+              %img.activator{:alt => "#{post.title}", :src => "#{post.art_work}"}/
+            .card-content
+              %span.card-title.activator.grey-text.text-darken-4= post.title
+               
+               
+              %p
+                %a{:href => "#"} This is a link
+            .card-reveal
+              %span.card-title.grey-text.text-darken-4= post.title
+                
+              %p Here is some more information about this product that is only revealed once clicked on.
+      
+      = will_paginate @feed 
+  
+  
 
-.col-sm-7
-  - @feed.each do |post|   
-    .row
-      .col-sm-3
-        .well
-          
-          %img{:alt => "#{post.title}", :src => "#{post.art_work}"}/
-      .col-sm-9
-        .well
-          %p= post.title 
-          = link_to song_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true do
-            %i.glyphicon.glyphicon-play
-  = will_paginate @feed 
 
-
-
-/ #infinite-scrolling
-/   = will_paginate @feed 
-/ .row
-/   - @feed.each do |post|
-/     .col-sm-6.col-md-4      
-/       .thumbnail
-/         %img{:alt => "#{post.title}", :src => "#{post.art_work}"}/
-/         .caption
-          
-/           / %h3= post.title         
-/         = link_to song_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true do
-/           %i.glyphicon.glyphicon-play
-/         / = link_to track_playlist_path, remote: true , method: :put do
-/         /   %i.glyphicon.glyphicon-plus
-           
-/         / = link_to "Play" ,track_audio_player_index_path(post.id), title: "#{post.title}", rel: 'tooltip' , remote: true, class: "btn btn-primary"
-       
-/     %br          
 #product-modal.modal.fade
- 

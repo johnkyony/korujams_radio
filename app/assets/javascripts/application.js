@@ -12,13 +12,9 @@
 //
 
 //= require jquery
-//= require materialize
+//= require navbar_javascript
 //= require jquery_ujs
 //= require google_analytics
 
 
 //= require_tree .
-(document).ready(function(){
-    (".button-collapse").sideNav();
-});
- 

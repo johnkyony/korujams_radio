@@ -4,6 +4,11 @@
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title= content_for?(:title) ? yield(:title) : 'Korujams'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Korujams'}"}
+    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}
+    / Compiled and minified CSS
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css", :rel => "stylesheet"}/
+    / Compiled and minified JavaScript
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"}
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     / Compiled and minified CSS
