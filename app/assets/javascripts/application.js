@@ -10,13 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
+//= require materialize
 //= require jquery_ujs
-//= require jquery.jplayer.min
-//= require mediaelement-and-player.min
-//= require mep-feature-playlist
-//= require bootstrap-sprockets
 //= require google_analytics
 
 
 //= require_tree .
+(document).ready(function(){
+    (".button-collapse").sideNav();
+});
+ 

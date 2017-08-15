@@ -21,7 +21,7 @@ end
 gem 'thin'
 gem 'public_activity'
 gem 'slim-rails'
-gem 'bootstrap-sass'
+gem 'materialize-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'high_voltage'

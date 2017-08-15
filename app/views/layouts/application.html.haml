@@ -6,12 +6,15 @@
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Korujams'}"}
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
+    / Compiled and minified CSS
+   
     = csrf_meta_tags
   %body
-    = render 'layouts/messages'
-    = render 'layouts/side_navigation_layout'
+    %main{:role => "main"}
+      = render 'layouts/messages'
+      = render 'layouts/mat_nav'
+      = yield
+    // = render 'layouts/side_navigation_layout'
     / %header
     /   = render 'layouts/navigation'
-    / %main{:role => "main"}
-    /   = render 'layouts/messages'
-    /   = yield
+    

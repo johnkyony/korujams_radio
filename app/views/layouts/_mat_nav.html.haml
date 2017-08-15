@@ -1,0 +1,25 @@
+%ul#slide-out.side-nav.fixed
+  %li
+    .user-view
+      .background
+        %img{:src => ""}/
+      %a{:href => "#!user"}
+        %img.circle{:src => ""}/
+      %a{:href => "#!name"}
+        %span.white-text.name John Doe
+      %a{:href => "#!email"}
+        %span.white-text.email jdandturk@gmail.com
+  %li
+    %a{:href => "#!"}
+      %i.material-icons> cloud
+      First Link With Icon
+  %li
+    %a{:href => "#!"} Second Link
+  %li
+    .divider
+  %li
+    %a.subheader Subheader
+  %li
+    %a.waves-effect{:href => "#!"} Third Link With Waves
+%a.button-collapse{"data-activates" => "slide-out", :href => "#"}
+  %i.material-icons menu
